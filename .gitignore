@@ -11,6 +11,7 @@
 # production
 /build
 /dist
+/clean
 
 # misc
 .DS_Store
