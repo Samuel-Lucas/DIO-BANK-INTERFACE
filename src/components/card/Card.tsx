@@ -1,9 +1,6 @@
-import { Button, Card, Field, Input, Stack } from "@chakra-ui/react"
+import { Card, Field, Input, Stack } from "@chakra-ui/react"
 import { ButtonCustom } from "../button/ButtonCustom";
-
-const chamarBoasVindas = () => {
-  alert('Bem-vindo ao sistema!');
-}
+import { chamarBoasVindas } from "../../services/Texto";
 
 export const CardWithForm = () => (
   <Card.Root maxW="sm">
