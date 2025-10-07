@@ -1,4 +1,9 @@
 import { Button, Card, Field, Input, Stack } from "@chakra-ui/react"
+import { ButtonCustom } from "../button/ButtonCustom";
+
+const chamarBoasVindas = () => {
+  alert('Bem-vindo ao sistema!');
+}
 
 export const CardWithForm = () => (
   <Card.Root maxW="sm">
@@ -21,8 +26,11 @@ export const CardWithForm = () => (
       </Stack>
     </Card.Body>
     <Card.Footer justifyContent="flex-end">
-      <Button variant="outline">Cancelar</Button>
-      <Button colorScheme='teal' size='sm' width='100%' marginTop='5px'>Entrar</Button>
+      <ButtonCustom colorScheme="teal" 
+        size="sm" 
+        width="100%" 
+        marginTop="5px" 
+        onClick={chamarBoasVindas}>Entrar</ButtonCustom>
     </Card.Footer>
   </Card.Root>
 )
