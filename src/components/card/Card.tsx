@@ -1,11 +1,20 @@
 import { Card, Field, Input, Stack } from "@chakra-ui/react"
 import { ButtonCustom } from "../button/ButtonCustom";
 import { chamarBoasVindas } from "../../services/Texto";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { login } from "../../services/Login";
+import { api } from "../../mock/Api";
 
 export const CardWithForm = () => {
   const [email, setEmail] = useState("")
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await api
+    }
+
+    getData()
+  })
 
   console.log('valor digitado', email)
   return (
