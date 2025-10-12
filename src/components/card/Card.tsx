@@ -1,35 +1,14 @@
 import { Card, Field, Input, Stack } from "@chakra-ui/react"
 import { ButtonCustom } from "../button/ButtonCustom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { login } from "../../services/Login";
-import { api } from "../../mock/Api";
 import './Card.css'
-
-interface UserData {
-  email: string,
-  password: string,
-  name: string
-}
 
 export const CardWithForm = () => {
   const [email, setEmail] = useState<string>("")
-  const [userData, setUserData] = useState<null | UserData>()
-
-  useEffect(() => {
-    const getData = async () => {
-      const data: any | UserData = await api
-      setUserData(data)
-    }
-
-    getData()
-  }, [])
 
   return (
   <Card.Root maxW="sm" className="card">
-    { userData === null || userData === undefined 
-      ? <h1>Loading ...</h1>
-      : <h1>Informações carregadas</h1> 
-    }
     <Card.Header>
       <Card.Title>Login</Card.Title>
       <Card.Description>
