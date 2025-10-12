@@ -3,6 +3,7 @@ import { ButtonCustom } from "../button/ButtonCustom";
 import { useEffect, useState } from "react";
 import { login } from "../../services/Login";
 import { api } from "../../mock/Api";
+import './Card.css'
 
 interface UserData {
   email: string,
@@ -17,14 +18,18 @@ export const CardWithForm = () => {
   useEffect(() => {
     const getData = async () => {
       const data: any | UserData = await api
+      setUserData(data)
     }
 
     getData()
-  })
+  }, [])
 
-  console.log('valor digitado', email)
   return (
-  <Card.Root maxW="sm">
+  <Card.Root maxW="sm" className="card">
+    { userData === null || userData === undefined 
+      ? <h1>Loading ...</h1>
+      : <h1>Informações carregadas</h1> 
+    }
     <Card.Header>
       <Card.Title>Login</Card.Title>
       <Card.Description>

@@ -1,3 +1,6 @@
 .header {
+    text-align: center;
     background-color: orange;
+    font-size: 24px;
+    font-weight: bold;
 }
