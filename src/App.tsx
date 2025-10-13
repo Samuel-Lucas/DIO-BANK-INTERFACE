@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import { Layout } from './components/Layout';
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+import AccountInfo from './pages/AccountInfo';
 
 function App() {
   return (
@@ -15,10 +16,13 @@ function App() {
               <Home />
             }>
             </Route>
-            <Route path='/conta' element={
+            <Route path='/conta/:id' element={
               <Account />
             }>
             </Route>
+            <Route path='/accountinfo' element={
+              <AccountInfo />
+            }></Route>
           </Routes>
         </Layout>
       </ChakraProvider>
