@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import './Header.css'
-import { AppContext } from '../../App'
+import { AppContext } from '../context/AppContextComponent'
 
 export const Header = () => {
 
