@@ -1,12 +1,17 @@
 import { Card, ChakraProvider, defaultSystem, Field, Input, Stack } from "@chakra-ui/react"
-import { CardWithForm } from "../components/card/Card"
 import { useState } from "react"
 import { ButtonCustom } from "../components/button/ButtonCustom"
-import { login } from "../services/Login"
+import { useLogin  } from "../services/Login"
 
 const Home = () => {
     
     const [email, setEmail] = useState<string>("")
+
+    const { login } = useLogin()
+
+    // const handleLogin = () => {
+    //     login('test@example.com')
+    // }
 
     return (
         <ChakraProvider value={defaultSystem}>
@@ -15,7 +20,7 @@ const Home = () => {
                     <Card.Header>
                         <Card.Title>Login</Card.Title>
                         <Card.Description>
-                        preencha os dados para fazer o login
+                            preencha os dados para fazer o login
                         </Card.Description>
                     </Card.Header>
                     <Card.Body>
