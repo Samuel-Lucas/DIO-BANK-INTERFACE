@@ -1,16 +1,34 @@
 import { useContext } from 'react'
 import './Header.css'
 import { AppContext } from '../context/AppContextComponent'
+import { Button, Flex, Spacer } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 export const Header = () => {
 
-    const context = useContext(AppContext)
+    const { isLoggedIn, setIsLoggedIn } = useContext(AppContext)
+    const navigate = useNavigate()
 
-    console.log(context)
+    const logout = () => {
+        setIsLoggedIn(false)
+        navigate('/')
+    }
     
     return(
-        <div className='header'>
-            Dio Bank
-        </div>
+        <Flex backgroundColor='orange' padding='5px'>
+            <div className='header'>
+                Dio Bank
+            </div>
+            {
+                isLoggedIn && (
+                    <>
+                        <Spacer />
+                        <Button onClick={() => logout()}>
+                            Sair
+                        </Button>
+                    </>
+                )
+            }
+        </Flex>
     )
 }

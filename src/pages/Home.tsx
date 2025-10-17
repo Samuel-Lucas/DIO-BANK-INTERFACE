@@ -9,10 +9,6 @@ const Home = () => {
 
     const { login } = useLogin()
 
-    // const handleLogin = () => {
-    //     login('test@example.com')
-    // }
-
     return (
         <ChakraProvider value={defaultSystem}>
             <div className='container'>
