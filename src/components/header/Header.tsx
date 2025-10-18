@@ -3,6 +3,7 @@ import './Header.css'
 import { AppContext } from '../context/AppContextComponent'
 import { Button, Flex, Spacer } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import { changeLocalStorage } from '../../services/Storage'
 
 export const Header = () => {
 
@@ -10,6 +11,7 @@ export const Header = () => {
     const navigate = useNavigate()
 
     const logout = () => {
+        changeLocalStorage({ login: false})
         setIsLoggedIn(false)
         navigate('/')
     }

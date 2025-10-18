@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { api } from "../mock/Api"
 import { AppContext } from "../components/context/AppContextComponent"
 import { useNavigate } from "react-router-dom"
+import { changeLocalStorage } from "./Storage"
 
 export const useLogin = () => {
     const { setIsLoggedIn } = useContext(AppContext)
@@ -15,6 +16,7 @@ export const useLogin = () => {
         }
 
         setIsLoggedIn(true)
+        changeLocalStorage({ login: true })
         navigate(`conta/${data.id}`)
     }
 
