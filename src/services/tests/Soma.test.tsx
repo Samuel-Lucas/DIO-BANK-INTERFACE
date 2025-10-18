@@ -1,4 +1,4 @@
-import { soma } from './Soma'
+import { soma } from '../Soma'
 
 describe('soma', () => {
     it('deve somar 1 ao numero informado', () => {

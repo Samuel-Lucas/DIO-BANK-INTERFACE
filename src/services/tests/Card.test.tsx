@@ -1,4 +1,4 @@
-import { chamarBoasVindas } from "./Texto";
+import { chamarBoasVindas } from "../Texto";
 
 describe('chamarBoasVindas', () => {
     it('deve exibir mensagem de boas vindas', () => {
